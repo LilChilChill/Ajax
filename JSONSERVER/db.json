@@ -1,0 +1,92 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john@gmail.com",
+      "age": 30,
+      "company": {
+        "name": "Apple",
+        "description": "Apple Inc. (formerly Apple Computer, Inc.) is an American multinational corporation and technology company headquartered in Cupertino, California, in Silicon Valley. It designs, develops, and sells consumer electronics, computer software, and online services."
+      }
+    },
+    {
+      "id": 2,
+      "firstName": "Mark",
+      "lastName": "Williams",
+      "email": "mark@gmail.com",
+      "age": 30,
+      "company": {
+        "name": "Microsoft Corporation",
+        "description": "American multinational corporation and technology company Microsoft Corporation is an American multinational corporation and technology company headquartered in Redmond, Washington. Microsoft's best-known software products are the Windows line of operating systems, the Microsoft 365 suite of productivity applications, and the Edge web browser."
+      }
+    },
+    {
+      "id": 3,
+      "firstName": "Karen",
+      "lastName": "Thomas",
+      "email": "karen@gmail.com",
+      "age": 30,
+      "company": {
+        "name": "Google Inc",
+        "description": "American multinational corporation and technology company Google LLC (/ ˈɡuːɡəl / ⓘ, GOO-ghəl) is an American multinational corporation and technology company focusing on online advertising, search engine technology, cloud computing, computer software, quantum computing, e-commerce, consumer electronics, and artificial intelligence (AI)."
+      }
+    },
+    {
+      "id": 4,
+      "firstName": "Nathan",
+      "lastName": "James",
+      "age": 31,
+      "email": "nathan@gmail.com",
+      "company": {
+        "name": "Nathan inc",
+        "description": "New company"
+      }
+    },
+    {
+      "id": 5,
+      "firstName": "Nathan",
+      "lastName": "James",
+      "age": 31,
+      "email": "nathan@gmail.com",
+      "company": {
+        "name": "Nathan inc",
+        "description": "New company"
+      }
+    },
+    {
+      "id": 6,
+      "firstName": "Nathan",
+      "lastName": "James",
+      "age": 31,
+      "email": "nathan@gmail.com",
+      "company": {
+        "name": "Nathan inc",
+        "description": "New company"
+      }
+    }
+  ],
+  "conpany": [
+    {
+      "id": 1,
+      "name": "Apple",
+      "description": "Apple Inc. (formerly Apple Computer, Inc.) is an American multinational corporation and technology company headquartered in Cupertino, California, in Silicon Valley. It designs, develops, and sells consumer electronics, computer software, and online services."
+    },
+    {
+      "id": 2,
+      "name": "Microsoft Corporation",
+      "description": "American multinational corporation and technology company Microsoft Corporation is an American multinational corporation and technology company headquartered in Redmond, Washington. Microsoft's best-known software products are the Windows line of operating systems, the Microsoft 365 suite of productivity applications, and the Edge web browser."
+    },
+    {
+      "id": 3,
+      "name": "Google Inc",
+      "description": "American multinational corporation and technology company Google LLC (/ ˈɡuːɡəl / ⓘ, GOO-ghəl) is an American multinational corporation and technology company focusing on online advertising, search engine technology, cloud computing, computer software, quantum computing, e-commerce, consumer electronics, and artificial intelligence (AI)."
+    },
+    {
+      "id": 4,
+      "name": "Nathan inc",
+      "description": "New company"
+    }
+  ]
+}
