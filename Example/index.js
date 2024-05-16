@@ -18,7 +18,11 @@ function renderUser(user) {
     var htmlString = '';
     for(var i = 0; i < user.length; i++) {
         htmlString += '<p>' + user[i].name + ' is working at ' + user[i].company.name + " company" + '</p>'
-        +'<br>'
+        + 
+        '<p>Phone number: ' + user[i].phone +  '</p>'
+        + 
+        '<p>Address: ' + user[i].address.street + '</p>'
+        + '<br>' 
         ;
     }
     container.insertAdjacentHTML('beforeend', htmlString);
@@ -28,7 +32,7 @@ function renderUser(user) {
 // //POST METHODS
 // const newUser =
 // {
-//     id: "11",
+//     id: "10",
 //     name: "Clementina DuBuque",
 //     username: "Moriah.Stanton",
 //     email: "Rey.Padberg@karina.biz",

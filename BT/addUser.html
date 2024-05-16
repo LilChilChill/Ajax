@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm người dùng</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 56px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">Quản lý người dùng</a>
+    </nav>
+
+    <div class="container mt-3">
+        <h3>Thêm người dùng mới</h3>
+
+        <form action="process_add_news.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="id">Id:</label>
+                <input type="text" class="form-control" id="id" name="id" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input class="form-control" id="Name" name="Name" rows="8" required></input>
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="text" class="form-control" id="phone" name="phone" required>
+            </div>
+            <button href="index.html" type="submit" class="btn btn-primary" id="add">Add user</button>
+        </form>
+        <br>
+        <a href="index.html"  type="submit" class="btn btn-primary">Go back</a>
+
+        <script>
+            var add = document.getElementById("add");
+            add.addEventListener("click", addUser);
+            function addUser(){
+                var ourRequest = new XMLHttpRequest();
+                ourRequest.open('POST', 'http://localhost:3000/user');
+                ourRequest.setRequestHeader('Content-Type', 'application/json');
+                ourRequest.onload = function() {
+                    var ourData = JSON.parse(ourRequest.responseText);
+                    render(ourData);
+                };
+                
+                ourRequest.send(JSON.stringify(newUser));
+            }
+
+            function render(user){
+                var htmlString = '';
+            }
+        </script>
+    </div>
+</body>
+</html>
