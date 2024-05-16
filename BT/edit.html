@@ -3,9 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chỉnh sửa người dùng</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 56px;
+        }
+    </style>
 </head>
 <body>
-    
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">Quản lý người dùng</a>
+    </nav>
+
+    <div class="container mt-3">
+        <h3>Chỉnh sửa người dùng</h3>
+
+        <form id="editForm">
+            <div class="form-group">
+                <label for="id">Id:</label>
+                <input type="text" class="form-control" id="id" name="id" required readonly>
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input class="form-control" id="name" name="name" rows="8" required></input>
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="text" class="form-control" id="phone" name="phone" required>
+            </div>
+            <button type="submit" class="btn btn-primary" id="save">Lưu</button>
+            <a href="index.html" class="btn btn-primary">Hủy</a>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var userId = urlParams.get('id');
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://localhost:3000/user/' + userId);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                var userData = JSON.parse(xhr.responseText);
+                document.getElementById('id').value = userData.id;
+                document.getElementById('name').value = userData.name;
+                document.getElementById('username').value = userData.username;
+                document.getElementById('email').value = userData.email;
+                document.getElementById('phone').value = userData.phone;
+            } else {
+                console.log('Đã xảy ra lỗi khi tải thông tin người dùng.');
+            }
+        };
+    xhr.send();
+});
+
+        var saveButton = document.getElementById("save");
+        saveButton.addEventListener("click", function(event) {
+            event.preventDefault(); 
+            var id = document.getElementById("id").value;
+            var name = document.getElementById("name").value;
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+
+            var updatedUser = {
+                id: id,
+                name: name,
+                username: username,
+                email: email,
+                phone: phone
+            };
+
+            var ourRequest = new XMLHttpRequest();
+            ourRequest.open('PUT', 'http://localhost:3000/user/' + id);
+            ourRequest.setRequestHeader('Content-Type', 'application/json');
+            ourRequest.onload = function() {
+                if (ourRequest.status === 200) {
+                    alert('Update success.');
+                    window.location.href = 'index.html';
+                } else {
+                    alert('Error.');
+                }
+            };
+            ourRequest.send(JSON.stringify(updatedUser));
+        });
+
+    </script>
 </body>
 </html>
